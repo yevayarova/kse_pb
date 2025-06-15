@@ -11,8 +11,10 @@ def get_guess(expected_length):
         if len(guess) == expected_length:
             return guess
         print(f"Invalid input. Expected a word with {expected_length} letters.")
-#
 
+#Скільки нервів щоб памятати і не загубити що таке i w wl ch
+#І вирішила вказати їх у play round один раз під одим іменем відразу що все було зрозуміло і так і залишити
+#
 def evaluate_guess(secret_word, guess):
     result = []
     for i in range(len(secret_word)):
@@ -23,7 +25,10 @@ def evaluate_guess(secret_word, guess):
         else:
             result.append('absent')
     return result
-
+#Жаль я роблячи домашнє завдання не знала про zip()
+# Тут вона полегшує життя тим що складає літерку і статус в кортежик і ці кортежі в один список і вже функція по цих кортежах в списку проходиться.
+#Ну wile і<wl впринципі робоче, але коли ми перебираємо for letter, status in zip()
+#Ми пишемо 1 рядком те що писалось 3-4
 def format_feedback(guess, evaluation):
     display = []
     for letter, status in zip(guess, evaluation):
@@ -63,7 +68,10 @@ def play_round(words, tries=6):
 
     print(f"You lose! The word was: {secret_word}")
     return False
+#Тут уникаю elif else
+#Змінн final зайва
 
+#І вирішила Зашити все попереднє в game_loop
 def game_loop():
     words = ['apple', 'bread', 'candy', 'dream', 'eagle', 'flame', 'grape', 'house', 'input', 'joker']
     print("Welcome to Wordle!")
@@ -74,5 +82,14 @@ def game_loop():
         if again != 'y':
             print("Thanks for playing Wordle!")
             break
-
+#запуск
 game_loop()
+
+
+
+"""
+Можна було імпортувати слово рандомне з бібліотеки англійських слів, Також користувач міг вибрати довжину слова категорію
+Я пам'ятаю була гра ешафот (виселеца)
+
+
+"""
